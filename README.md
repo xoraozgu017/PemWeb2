@@ -13,3 +13,20 @@ Untuk mengintalisasi CI dibutuhkan software VisCode, XAMPP, Composer
 ![Screenshot (1509)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/e46cf1f0-eeb5-4d16-8880-df0a904f7c27)
 ![Screenshot (1510)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/f2cedd08-fa0f-4b9e-a722-66e6de73c791)
 
+* Cek Hasil Instalisasi
+![Screenshot (1511)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/85eb0b0e-64ec-4513-9168-53058870a04f)
+![Screenshot (1512)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/0ef44062-dd64-4c41-9c16-2586ef82aa94)
+
+* Install Extension VCS
+![Screenshot (1513)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/5d9a557c-706c-4c97-9a0d-a24fc3c54214)
+![Screenshot (1514)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/bb714f0a-3289-465b-ba68-f6a91a9fa5a0)
+![Screenshot (1515)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/bd7545d2-3942-4ca7-8f1e-7c7c9d198e98)
+
+* Setting VCS
+- File > Preference > Setting atau CTRL + ,
+- Ketik Format > Centang Format On Save
+![Screenshot (1516)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/3c3c5f8d-3875-4a20-9325-a591fad52114)
+
+* Instalasi CodeIgniter 4
+•Buka folder xampp/htdocs
+•Klik kanan > Klik Git Bash
