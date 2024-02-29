@@ -2,7 +2,7 @@ TUGAS PERTEMUAN 2
 
 Instalisasi Codeigniter
 
-Untuk mengintalisasi CI dibutuhkan software VisCode, XAMPP, Composer
+Untuk mengintalisasi CI dibutuhkan software VsCode, XAMPP, Composer
 
 * Download & Instalisasi Composer
 ![Screenshot (1504)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/2c4a24aa-b598-43d2-a430-caacb9ac912d)
