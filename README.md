@@ -30,3 +30,13 @@ Untuk mengintalisasi CI dibutuhkan software VisCode, XAMPP, Composer
 * Instalasi CodeIgniter 4
 •Buka folder xampp/htdocs
 •Klik kanan > Klik Git Bash
+![Screenshot (1523)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/0bc57593-de7a-4947-9f1e-e660b0f81a4c)
+![Screenshot (1524)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/004cccd5-e815-4e4a-b05f-743c527d0eeb)
+
+* Coba Codeigniter4
+•Buka git bash di folder xampp
+•Ketik cd nama_folder_project
+•Ketik php spark serve
+•Buka browser dan ketik localhost:8080
+![Screenshot (1526)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/a27356af-36c7-4f69-ba7c-e1b3ba81bce8)
+![Screenshot (1528)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/da72bd83-9004-458f-96ad-8d413c29a2fe)
