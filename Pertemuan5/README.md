@@ -1,3 +1,3 @@
-![Screenshot (1607)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/263047b6-b07a-4189-bf5f-a34b49d0f6dc)
-![Screenshot (1608)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/334fca4b-0a60-4bc0-b27e-8bd784b0b744)
-![Screenshot (1610)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/f31388e4-36be-4819-9c45-297b2bd5f96d)
+![Screenshot (1611)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/8b54df0f-631a-4be0-93cf-416e9b375303)
+![Screenshot (1612)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/c814c71b-0942-457c-9193-8fc735a7e5b3)
+![Screenshot (1613)](https://github.com/xoraozgu017/PemWeb2/assets/145304971/c7a44058-95aa-4b4c-b8a1-c248e767df42)
