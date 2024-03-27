@@ -7,19 +7,34 @@ class Pages extends BaseController
     public function index(){
         $data = [
             'title' => 'Home | Unipdu Press',
-            'tes' => ['satu','dua','tiga']
+            //'tes' => ['satu','dua','tiga']
         ];
-        echo view('layout\header', $data);
-        echo view('pages\home');
-        echo view('layout\footer');
+        return view('pages\home', $data);
     }
 
     public function about(){
         $data = [
-            'title' => 'Halaman About',
+            'title' => 'Halaman About | Unipdu Press',
         ];
-        echo view('layout\header', $data);
-        echo view('pages\about');
-        echo view('layout\footer');
+        return view('pages\about', $data);
+    }
+
+    public function contact(){
+        $data = [
+            'title' => 'Hubungi Kami | Unipdu Press',
+            'alamat' => [
+                [
+                    'tipe' => 'Rumah',
+                    'alamat' => 'Jln.KH Sholeh Dusun Banjarkerep',
+                    'kota' => 'Jombang'
+                ],
+                [
+                    'tipe' => 'Kantor',
+                    'alamat' => 'Komplek Dusun Banjarkerep',
+                    'kota' => 'Jombang'
+                ]
+            ]
+        ];
+        return view ('pages/contact', $data);  
     }
 }
