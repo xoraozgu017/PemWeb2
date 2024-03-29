@@ -35,6 +35,6 @@ class Pages extends BaseController
                 ]
             ]
         ];
-        return view ('pages/contact', $data);  
+        return view ('pages\contact', $data);  
     }
 }
