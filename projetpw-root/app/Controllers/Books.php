@@ -13,12 +13,21 @@ class Books extends BaseController{
     }
     
     public function index(){
-        $buku = $this->BooksModel->findAll();
+        //$buku = $this->BooksModel->findAll();
         $data = [
             'title' => 'Daftar Buku',
-            'buku' => $buku,
+            'buku' => $this->BooksModel->getBuku()
         ];
 
         return view('books\index', $data); 
+    }
+
+    public function detail($slug){
+        $data = [
+            'title' => 'Detail Buku',
+            'buku' => $this->BooksModel->getBuku($slug)
+        ];
+
+        return view( 'books\detail', $data );
     }
 }

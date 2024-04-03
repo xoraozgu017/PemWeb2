@@ -7,4 +7,6 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Pages::index');
 
+$routes->get('/books/(:segment)', 'Books::detail/$1');
+
 $routes->setAutoRoute(true);

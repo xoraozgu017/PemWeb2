@@ -21,7 +21,7 @@
                     <th scope="row"><?= $i++; ?></th>
                     <td><img src="\img\<?= $b['sampul']; ?>" alt="" class="sampul"></td>
                     <td><?= $b['judul']; ?></td>
-                    <td><a href="" class="btn btn-success">Detail</a></td>
+                    <td><a href="/books/<?= $b['slug']; ?>" class="btn btn-success">Detail</a></td>
                   </tr>
                 <?php endforeach; ?>
               </tbody>
