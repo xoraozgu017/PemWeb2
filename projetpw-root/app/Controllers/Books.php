@@ -19,7 +19,7 @@ class Books extends BaseController{
             'buku' => $this->BooksModel->getBuku()
         ];
 
-        return view('books\index', $data); 
+        return view('books/index', $data); 
     }
 
     public function detail($slug){
@@ -28,6 +28,36 @@ class Books extends BaseController{
             'buku' => $this->BooksModel->getBuku($slug)
         ];
 
-        return view( 'books\detail', $data );
+        //kode jika buku tidak ada
+        if(empty($data['buku'])){
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Judul Buku' . $slug . 'Tidak Ditemukan');
+        }
+
+        return view( 'books/detail', $data );
     }
+
+    public function create(){
+        $data = [
+            'title' => 'Detail buku'
+        ];
+
+        return view('books/create', $data);
+    }
+
+    public function save(){
+
+        $slug = url_title($this->request->getVar('judul'), '-' , true);
+        $this->BooksModel->save([
+            'judul' => $this->request->getVar('judul'),
+            'slug' => $slug,
+            'penulis' => $this->request->getVar('penulis'),
+            'penerbit' => $this->request->getVar('penerbit'),
+            'sampul' => $this->request->getVar('sampul')
+        ]);
+        
+        session()->setFlashData('pesan','Data berhasil ditambahkan');
+
+        return redirect()->to('/books');
+    }
+
 }
