@@ -38,14 +38,35 @@ class Books extends BaseController{
 
     public function create(){
         $data = [
-            'title' => 'Detail buku'
+            'title' => 'Detail Buku'
+        ];
+    
+        $data = [
+            'title' => 'Form Tambah Buku',
+            'validation' => session()->getFlashdata('validation') ?? \Config\Services::validation()
         ];
 
+    
         return view('books/create', $data);
     }
 
     public function save(){
 
+        //validasi input
+        if(!$this->validate([
+            'judul' => [
+                'rules' => 'required|is_unique[books.judul]',
+                'errors' => [
+                    'required' => '{field} Buku Harus Diisi',
+                    'is_unique' => '{field} Buku Sudah dimasukkan'
+                ]
+            ]
+        ])) {
+            session()->setFlashdata('validation', \Config\Services::validation());
+            return redirect()->to('/books/create')->withInput();
+            //$validation = \Config\Services::validation();
+            //return redirect()->back()->withInput()->with('validation', $validation);
+        }
         $slug = url_title($this->request->getVar('judul'), '-' , true);
         $this->BooksModel->save([
             'judul' => $this->request->getVar('judul'),
@@ -60,4 +81,12 @@ class Books extends BaseController{
         return redirect()->to('/books');
     }
 
+    public function delete($id){
+        
+        $this->BooksModel->delete($id);
+        
+        session()->setFlashData('pesan','Data berhasil dihapus');
+        
+        return redirect()->to('/books');
+    }
 }

@@ -17,7 +17,14 @@
                             <p class="card-text"><small class="text-body-secondary"><b>Penerbit : </b><?= $buku['penerbit']; ?></small></p>
                         
                             <a href="" class="btn btn-warning">Ubah</a>
-                            <a href="" class="btn btn-danger">Hapus</a>
+                            <form action="/books/<?= $buku[ 'id' ]; ?>" method="post" class="d-inline">
+                            <?= csrf_field(); ?>
+                            <input type="hidden" name="_method" value="delete">
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin menghapus data ini?')">Hapus</button>
+                            </form>
+
+                            <!--<a href="/books/delete/<?= $buku[ 'id' ]; ?>" class="btn btn-danger">Hapus</a>-->
+
                             <br><br>
                             <a href="/books">Kembali ke Daftar Buku</a>
                         </div>
