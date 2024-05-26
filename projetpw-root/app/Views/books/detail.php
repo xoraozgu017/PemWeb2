@@ -16,7 +16,7 @@
                             <p class="card-text"><b>Penulis : </b><?= $buku['penulis']; ?></p>
                             <p class="card-text"><small class="text-body-secondary"><b>Penerbit : </b><?= $buku['penerbit']; ?></small></p>
                         
-                            <a href="" class="btn btn-warning">Ubah</a>
+                            <a href="/books/edit/<?= $buku['slug']; ?>" class="btn btn-warning">Ubah</a>
                             <form action="/books/<?= $buku[ 'id' ]; ?>" method="post" class="d-inline">
                             <?= csrf_field(); ?>
                             <input type="hidden" name="_method" value="delete">
@@ -26,7 +26,7 @@
                             <!--<a href="/books/delete/<?= $buku[ 'id' ]; ?>" class="btn btn-danger">Hapus</a>-->
 
                             <br><br>
-                            <a href="/books">Kembali ke Daftar Buku</a>
+                            <a href="/books" class="btn btn-primary">Kembali Ke Daftar Buku</a>
                         </div>
                     </div>
                 </div>

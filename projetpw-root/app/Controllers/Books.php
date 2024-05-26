@@ -57,8 +57,8 @@ class Books extends BaseController{
             'judul' => [
                 'rules' => 'required|is_unique[books.judul]',
                 'errors' => [
-                    'required' => '{field} Buku Harus Diisi',
-                    'is_unique' => '{field} Buku Sudah dimasukkan'
+                    'required' => '{field} buku harus diisi',
+                    'is_unique' => '{field} buku sudah dimasukkan'
                 ]
             ]
         ])) {
@@ -87,6 +87,87 @@ class Books extends BaseController{
         
         session()->setFlashData('pesan','Data berhasil dihapus');
         
+        return redirect()->to('/books');
+    }
+
+    public function edit($slug){
+        
+        //session()
+
+        $data = [
+            'title' => 'Form Ubah Data Buku',
+            'validation' => \Config\Services::validation(),
+            'buku' => $this->BooksModel->getBuku($slug)
+        ];
+
+        return view('books/edit', $data);
+    }
+
+    public function update($id){
+
+        
+        //fungsi cek judul buku yang ada
+        $bukuLama = $this->BooksModel->getBuku($this->request->getVar('slug'));
+            if($bukuLama['judul'] == $this->request->getVar('judul')){
+                $rule_judul = 'required|is_unique[books.judul]';
+            }else{
+                $rule_judul = 'required';
+            }
+
+            if($bukuLama['penulis'] == $this->request->getVar('penulis')){
+                $rule_penulis = 'required|is_unique[books.penulis]';
+            }else{
+                $rule_penulis = 'required';
+            }
+
+            if($bukuLama['penerbit'] == $this->request->getVar('penerbit')){
+                $rule_penerbit = 'required|is_unique[books.penerbit]';
+            }else{
+                $rule_penerbit = 'required';
+            }
+        
+        //validasi input
+        if(!$this->validate([
+            'judul' => [
+                'rules' => $rule_judul,
+                'errors' => [
+                    'required' => '{field} buku harus diisi',
+                    'is_unique' => '{field} buku sudah dimasukkan'
+                ]
+            ],
+
+            'penulis' => [
+                'rules' => $rule_penulis,
+                'errors' => [
+                    'required' => '{field} buku harus diisi',
+                    'is_unique' => '{field} buku sudah dimasukkan'
+                ]
+            ],
+
+            'penerbit' => [
+                'rules' => $rule_penerbit,
+                'errors' => [
+                    'required' => '{field} buku harus diisi',
+                    'is_unique' => '{field} buku sudah dimasukkan'
+                ]
+            ]
+        ])){
+            $validation = \Config\Services::validation();
+            return redirect()->to('/books/edit/'.$this->request->getVar('slug'))->withInput()->with('validation', $validation);
+        }   
+
+        $slug = url_title($this->request->getVar('judul'), '-' , true);
+        $this->BooksModel->save([
+            'id' => $id,
+            'judul' => $this->request->getVar('judul'),
+            'slug' => $slug,
+            'penulis' => $this->request->getVar('penulis'),
+            'penerbit' => $this->request->getVar('penerbit'),
+            'sampul' => $this->request->getVar('sampul')
+        ]);
+
+        session()->setFlashdata('pesan', 'Data berhasil diubah');
+
         return redirect()->to('/books');
     }
 }
