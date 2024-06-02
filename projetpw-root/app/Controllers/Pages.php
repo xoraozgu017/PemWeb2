@@ -4,38 +4,37 @@ namespace App\Controllers;
 
 class Pages extends BaseController
 {
-    public function index()
-    {
+    public function index(){
         $data = [
             'title' => 'Home | Unipdu Press',
-            'tes' => ['satu', 'dua', 'tiga']
+            //'tes' => ['satu','dua','tiga']
         ];
-        return view('pages/home', $data);
+        return view('pages\home', $data);
     }
-    public function about()
-    {
+
+    public function about(){
         $data = [
-            'title' => 'Tentang | Unipdu Press'
+            'title' => 'Halaman About | Unipdu Press',
         ];
-        return view('pages/about', $data);
+        return view('pages\about', $data);
     }
-    public function contact()
-    {
+
+    public function contact(){
         $data = [
             'title' => 'Hubungi Kami | Unipdu Press',
             'alamat' => [
                 [
                     'tipe' => 'Rumah',
-                    'alamat' => 'Desa Plosogenuk no 17',
+                    'alamat' => 'Jln.KH Sholeh Dusun Banjarkerep',
                     'kota' => 'Jombang'
                 ],
                 [
                     'tipe' => 'Kantor',
-                    'alamat' => 'Kompleks Perum Pondok Perak',
+                    'alamat' => 'Komplek Dusun Banjarkerep',
                     'kota' => 'Jombang'
                 ]
             ]
         ];
-        return view('pages/contact', $data);
+        return view ('pages\contact', $data);  
     }
 }
